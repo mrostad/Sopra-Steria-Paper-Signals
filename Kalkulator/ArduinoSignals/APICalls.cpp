@@ -173,6 +173,7 @@ void PaperSignals::CustomExecution(String JSONData)
 
   Serial.println("String in: " + customIntentData);
   int answer = GetResult(customIntentData);
+  int previousDigit = -1;
 
   std::stack<int> digits;
   while (answer > 0)
@@ -186,9 +187,15 @@ void PaperSignals::CustomExecution(String JSONData)
   {
     int digit = digits.top();
     digits.pop();
-    Serial.print("Moving to: "); Serial.println(digit);
-    MoveServoToPosition(180-(18*(digit+1)), 4);
- 
+    if (digit == previousDigit){
+      MoveServoToPosition(180-(18*(digit+1)-10), 1);
+      delay(50);
+      MoveServoToPosition(180-(18*(digit+1)), 1);
+    }else {
+      MoveServoToPosition(180-(18*(digit+1)), 4);
+    }
+    
+    previousDigit = digit; 
     delay(1000);
   }
 
