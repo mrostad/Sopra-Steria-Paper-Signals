@@ -15,10 +15,10 @@ limitations under the License.
 */
 
 /* WiFi Network must be 2.4GHz */
-const String SSID = "FYLL INN SSID HER"; 
-const String Password = "WIFI-PASSORD HER";
+const String SSID = "<YOUR WIFI SSID HERE>"; 
+const String Password = "<YOUR WIFI PASSWORD HERE>";
 
 /* Your Signal ID should be lowercase, and each word should be separated by dashes. 
 If Google Assistant spoke too quickly, you can ask to repeat the identifier at any 
 time be saying "What is the setup code for [SIGNAL NAME]?" */
-const String SignalID = "SETUP CODE HER";
+const String SignalID = "<YOUR SIGNAL ID HERE>";
